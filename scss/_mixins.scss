@@ -1,0 +1,145 @@
+// fonts
+@mixin fontFace($fontFamily, $path) {
+  @font-face {
+    font-family: $fontFamily;
+    src: url($path);
+  }
+}
+
+@mixin useFont($fontFamily, $fontSize, $fontColor, $fontWeight: auto) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  color: $fontColor;
+  font-weight: $fontWeight;
+}
+
+
+
+
+
+@mixin fontaWesomeStyle ($color,$fontSize){
+  color:$color;
+  font-size: $fontSize;
+}
+
+@mixin beforIcon($icon,$color){
+  &::before{
+    content: $icon;
+		font-family: "Font Awesome 5 Free"; 
+		font-weight: 900; 
+		// margin:$margin;
+	  color: $color;
+}
+
+}
+
+@mixin after ($borderColor,$width,$padding-top:1.5rem){
+  content: "";
+  display: block;
+  border-bottom: 2px solid $borderColor;
+  width: $width;
+  padding-top: $padding-top;
+}
+
+@mixin position ($position,$top:auto,$right:auto,$left:auto){
+  position: $position;
+    top: $top;
+    right: $right;
+    left:$left;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// shadows
+@mixin boxShadow($xAxis, $yAxis, $spread, $blurrness, $color) {
+  box-shadow: $xAxis $yAxis $spread $blurrness $color;
+}
+
+// buttons
+@mixin buttonStyle(
+  $bgColor,
+  $color,
+  $borderColor,
+  $width,
+  $height,
+  $borderRadius: 6px
+) {
+  color: $color;
+  border-radius: $borderRadius;
+  border: 1px solid $borderColor;
+  background-color: $bgColor;
+  width: $width;
+  height: $height;
+}
+
+
+// section header style looping
+@mixin sectionHeaderLooping() {
+  @each $secStyle in $sectionHeaderStyle {
+    .#{$secStyle} {
+      @extend %sectionHeaderStyle;
+    }
+  }
+}
+
+@mixin bgImgProperties($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@mixin bgImgGradient($src, $gradient, $belndMood, $opacity: auto) {
+  background-image: url($src), $gradient;
+  background-blend-mode: $belndMood;
+  opacity: $opacity;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+// footer img
+@mixin instgramImg (){
+  @each $img in $footerInsta{
+      .#{$img}{
+          background-image: url(../img/instgram-footer/#{$img}.jpg);
+          @extend %bgImg-properties;
+      }
+      
+  }
+}
+
+
+@mixin grid($grid-template-columns,$justify-items,$justify-content,$grid-gap) {
+  display:grid;
+  grid-template-columns: $grid-template-columns;
+  justify-items:$justify-items ;
+  justify-content:$justify-content ;
+  grid-gap:$grid-gap; 
+  
+}

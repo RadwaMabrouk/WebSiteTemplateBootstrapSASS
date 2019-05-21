@@ -1,0 +1,145 @@
+// rest 
+html{
+    font-size: $htmlFontSize;
+    body{
+        @include useFont($OpenSans-Regular, 1rem, $gary, normel);
+    }
+}
+
+.over-lay{  
+    @extend %overLay;
+}
+button{
+    @extend %button;
+}
+
+
+
+// services-section
+.services-section{
+    background-color: $lightGrey;
+    i{
+        @include fontaWesomeStyle($gary,2.8rem);
+        &:hover{
+            color:$primaryColor;
+        }
+    }
+    h3{
+        @include useFont($Play-Regular, 1.714rem, $primaryColor, $fontWeight: auto);
+    }
+}
+
+// recent-projects
+.recent-projects ,.from-blog ,.scss-contact-us-page{
+    h2{
+        @include useFont($Play-Regular, 2.5rem, $primaryColor, $fontWeight: auto);
+        &:after{
+            @include after ($primaryColor,6.7rem,1rem);
+        }
+    }
+}
+
+// recent-project
+.css-style{
+    display: none;
+    @extend %overLay;
+    width: 100% !important;
+
+    i{
+       
+       @include position (relative,144px,auto,149px);
+        font-size: 3rem;
+        
+    }
+}
+.owl-dots{
+    display: none !important;
+}
+.owl-nav{
+    padding: 0;
+    text-align: right;
+}
+.figure-trial{
+    &:hover{
+        .css-style{
+            display: block !important; 
+        }   
+    }
+    
+}
+
+
+.transformDirection{
+    transform: translate3d(0, 0px, 0px) !important;
+}
+
+// number-section
+.number-section{
+    background-color: $primaryColor;
+}
+
+.scss-number-section{
+    h2{
+        @include useFont($Play-Bold, 3.5714rem, $whiteColor);
+        &:after{
+            @include after ($whiteColor,2rem,0.5rem);
+            margin: auto;
+        }
+    }
+    h3{
+        @include useFont($Play-Regular, 1.5rem, $whiteColor); 
+    }
+}
+
+
+// from-blog
+.scss-from-blog{
+    background-color: $lightGrey;
+    h5{
+        @include useFont($OpenSans-LightItalic, 1rem,$gary);
+        
+    }
+    a{
+        @include useFont($OpenSans-Bold, 1rem,$primaryColor);
+    }
+}
+
+// scss-Get-in-touch
+.GetIn{
+    background-color: $primaryColor;
+}
+.scss-Get-in-touch{
+    
+    padding:0 0.93333333rem 0 0.93333333rem;
+    h3{
+        @include useFont($Play-Regular, 1.714rem, $whiteColor, $fontWeight: auto);
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    html{
+        font-size: 12px !important;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+
+    html{
+        font-size: 12px !important;
+    }
+    .navbar-brand.align-items-center{
+        width: 60%;
+    }
+    .scss-from-blog{
+        flex-direction: column-reverse;
+        margin-bottom: 0.8rem;
+        background-color: transparent;
+        img{
+            width: 38%;
+            margin-bottom: 1.5rem;
+            order: 1;
+        }
+       
+    }
+}

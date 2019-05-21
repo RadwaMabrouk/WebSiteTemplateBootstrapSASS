@@ -1,0 +1,96 @@
+// blog bar
+.scss-blog{
+    background-color: $primaryColor;
+
+    h3{
+        @include useFont($Play-Regular, 1.714rem, $whiteColor);
+    }
+    p{
+        @include useFont($OpenSans-Regular, 1rem,$whiteColor);
+    }
+}
+
+// card
+.card{
+    border: none !important;
+}
+.scss-card{
+    
+    h5{
+        @include useFont($Play-Bold, 1.71428571rem, $secondaryColors);
+    }
+    p{
+        @include useFont($OpenSans-Regular, 1rem, $gary, normel);
+        margin-bottom: 2rem !important;
+    }
+    div{
+        a{
+            @include useFont($OpenSans-Bold, 1rem, $whiteColor, normel);
+            background-color: $primaryColor;
+            border:none;
+
+        }
+    }
+}
+
+// last posts
+.media-body{
+    p{
+        @include useFont($OpenSans-Regular, 1rem, $gary, normel);
+    }
+    h5{
+        @include useFont($OpenSans-SemiBold, 1rem,$gary);
+    }
+
+}
+.fa-search{
+    top: -35px;
+    position: relative;
+    
+   
+}
+// pagenation
+.page-link{
+    border: 1px solid $primaryColor !important;
+}    
+.page-item:last-child .page-link{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.page-item:first-child .page-link{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.scss-last-posts{
+    
+        input::placeholder{
+            @include useFont($OpenSans-LightItalic, 1rem,$gary);
+        }
+        h3{
+            @include useFont($Play-Bold, 1.714285rem, $secondaryColors);
+        }
+}
+
+// blog-categorie
+.scss-blog-categorie{
+    a{
+        @include useFont($OpenSans-SemiBold, 1rem,$gary);
+
+    }
+}
+
+.scss-card-overlay{
+    @extend %scss-card-overlay;
+    p{
+        @include useFont($OpenSans-Regular, 1rem, $whiteColor);
+        margin-bottom:0 !important; 
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .scss-card-overlay{
+        
+        top:140px !important;
+    } 
+}

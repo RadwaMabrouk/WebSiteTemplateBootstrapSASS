@@ -1,0 +1,106 @@
+// facebook social-media
+.social-media-icon{
+    @include fontaWesomeStyle ($gary,1rem);
+   
+}
+.social-media{
+    i{
+        &:hover{
+            color:$primaryColor;
+        }
+    }
+}
+// heder
+header{
+    .collapse.navbar-collapse{
+        ul{
+            li{
+                a{
+                    &:hover{
+                        color:$primaryColor !important;
+                    }  
+                }
+            }
+        }
+    }
+}
+.content-carousel{
+    @include position (absolute,324px,131px);
+    
+    h1{
+        @include useFont($Raleway-SemiBold, 3.5714rem, $whiteColor, $fontWeight: auto);
+    }
+}
+
+
+// footer
+
+.beforIconLtr{
+        @include beforIcon('\f101',$primaryColor);
+        margin-left: .5rem !important;
+    }
+.beforIconRtl{
+    @include beforIcon('\f100',$primaryColor);
+    margin-left: .5rem!important;
+}   
+
+.footer{
+    background-color: $secondaryColors;
+    h3{
+        @include useFont($Play-Bold, 1.4285714rem, $primaryColor);
+    }
+    .list-group-item{
+        background-color: transparent;
+        border: none;
+       }
+       a{
+           &:hover{
+               color:$primaryColor !important;
+           }
+       }
+       i{
+        @include fontaWesomeStyle ($primaryColor,1rem);
+       }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    
+
+    
+    .social-media{
+        font-size:0.71428rem !important;
+    }
+    
+    .content-carousel{
+        top: 150px;
+        right:auto;
+        
+        
+    }
+
+    .carousel-control-prev ,.carousel-control-next-icon{
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px) {
+
+    
+    
+    .social-media ,.social-media-icon{
+        font-size: 0.6rem !important;
+        
+    }
+    .content-carousel{
+        top: 72px;
+        right:auto;
+        h1{
+           font-size: 0.85714rem;
+        }
+        p{
+            display:none;  
+        }
+    }
+
+    
+}
